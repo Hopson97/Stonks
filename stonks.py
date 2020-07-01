@@ -37,7 +37,7 @@ class Buffer:
     def clear(self):
         for y in range(HEIGHT):
             for x in range(3, WIDTH):
-                self.set(x, y, '.')
+                self.set(x, y, ' ')
             
 class Stonk:
     def __init__(self, start):
