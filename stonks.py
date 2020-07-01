@@ -46,11 +46,12 @@ class Stonk:
 
     def sim(self):
         self.history.append(self.value)
-        if randrange(0, 10) > 3:
+        if randrange(0, 1000) > 333:
             self.value += 1 
         else:
             self.value -= 1
         self.value = max(0, self.value)
+        self.value = min(HEIGHT - 1, self.value)
 
 
 buffer = Buffer()
