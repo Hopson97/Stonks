@@ -54,15 +54,18 @@ class Stonk:
         self.value = min(HEIGHT - 1, self.value)
 
 
-buffer = Buffer()
-stonk = Stonk(0)
-buffer.clear()
-while len(stonk.history) < WIDTH - 3:
-    sleep(0.01)
-    print(STONKS)
-    for idx, value in enumerate(stonk.history):
-        buffer.set(idx + 3, HEIGHT - value - 1, '#')
-    stonk.sim()
-    buffer.print()
+def main():
+    buffer = Buffer()
+    stonk = Stonk(0)
+    buffer.clear()
+    while len(stonk.history) < WIDTH - 3:
+        sleep(0.01)
+        print(STONKS)
+        for idx, value in enumerate(stonk.history):
+            buffer.set(idx + 3, HEIGHT - value - 1, '#')
+        stonk.sim()
+        buffer.print()
 
 
+if __name__ == '__main__':
+    main()
